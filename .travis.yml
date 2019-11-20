@@ -6,4 +6,5 @@ android:
     - android-26
     - extra
 script:
+  - chmod +x ./gradlew
   - ./gradlew build
