@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "535815740659",
+    "firebase_url": "https://distribuidoracaproni.firebaseio.com",
+    "project_id": "distribuidoracaproni",
+    "storage_bucket": "distribuidoracaproni.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535815740659:android:94e936b7e3d3917c7cab86",
+        "android_client_info": {
+          "package_name": "br.eng.distribuidoracaproni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535815740659-ui1nb07e8mt5m6ggeuf2r81gqs4n5h4o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.eng.distribuidoracaproni",
+            "certificate_hash": "136f23fb0343883778538b1b3c68e150299e62c9"
+          }
+        },
+        {
+          "client_id": "535815740659-en967t01dk0spev99h0igcu03tfqkqkm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB36xcKxFZH9e2ExRuLB9OoVwW29Z8A5Sw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535815740659-en967t01dk0spev99h0igcu03tfqkqkm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
