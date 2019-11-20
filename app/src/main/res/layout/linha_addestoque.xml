@@ -119,7 +119,6 @@
             android:layout_height="30dp"
             android:layout_gravity="right"
             android:background="@android:color/transparent"
-            android:onClick="myClickHandler"
             app:srcCompat="@drawable/ic_add"
             tools:ignore="VectorDrawableCompat" />
 

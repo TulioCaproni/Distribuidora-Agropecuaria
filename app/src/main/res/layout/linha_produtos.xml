@@ -120,7 +120,6 @@
             android:layout_marginStart="4dp"
             android:layout_marginLeft="10dp"
             android:background="@android:color/transparent"
-            android:onClick="myClickHandler"
             app:srcCompat="@drawable/ic_create_black_24dp"
             tools:ignore="VectorDrawableCompat" />
 
@@ -132,7 +131,6 @@
             android:layout_marginStart="4dp"
             android:layout_marginLeft="10dp"
             android:background="@android:color/transparent"
-            android:onClick="myClickHandler"
             app:srcCompat="@drawable/ic_delete_sweep_black_24dp"
             tools:ignore="VectorDrawableCompat" />
 
