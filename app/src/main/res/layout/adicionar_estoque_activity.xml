@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:text="Button"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="216dp" />
+            tools:layout_editor_absoluteY="216dp"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
