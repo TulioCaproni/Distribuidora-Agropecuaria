@@ -1,11 +1,13 @@
 package br.eng.distribuidoracaproni.ui.listarestoque;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -22,8 +24,10 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import br.eng.distribuidoracaproni.MainActivity;
 import br.eng.distribuidoracaproni.R;
 import br.eng.distribuidoracaproni.objetos.Estoque;
+import br.eng.distribuidoracaproni.ui.adicionarestoque.AdicionarEstoqueFragment;
 
 public class ListarEstoqueFragment extends Fragment implements Serializable, View.OnClickListener {
     private static EstoqueAdapter adapter;
@@ -35,6 +39,13 @@ public class ListarEstoqueFragment extends Fragment implements Serializable, Vie
     Estoque estoque = new Estoque();
 
     public SearchView filter;
+
+    Fragment fragment;
+    Activity main;
+
+    String Tag;
+
+    Button btnAddEstoque;
 
     //Firebase
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -55,6 +66,11 @@ public class ListarEstoqueFragment extends Fragment implements Serializable, Vie
         listaestoque = view.findViewById(R.id.listaListEstoque);
         filter = view.findViewById(R.id.searchListEstoque);
 
+        btnAddEstoque  = view.findViewById(R.id.btnAddEstoque);
+
+        fragment = new AdicionarEstoqueFragment();
+        main = getActivity();
+
         listStart();
         listar();
 
@@ -68,8 +84,23 @@ public class ListarEstoqueFragment extends Fragment implements Serializable, Vie
     }
 
     @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.btnAddEstoque:
+                if (main != null) {
+                    Tag = "AdicionarEstoqueFragment";
+                    ((MainActivity) getActivity()).displaySelectedFragment(fragment, Tag);
+                }
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
+        }
+    }
+    @Override
     public void onResume() {
         super.onResume();
+        btnAddEstoque.setOnClickListener(this);
         //getFragmentManager().beginTransaction().detach(this).attach(this).commit();
     }
 
@@ -155,8 +186,4 @@ public class ListarEstoqueFragment extends Fragment implements Serializable, Vie
         }
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }

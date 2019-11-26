@@ -37,7 +37,7 @@ import br.eng.distribuidoracaproni.Conexao;
 import br.eng.distribuidoracaproni.MainActivity;
 import br.eng.distribuidoracaproni.R;
 import br.eng.distribuidoracaproni.objetos.Produtos;
-import br.eng.distribuidoracaproni.ui.home.HomeFragment;
+import br.eng.distribuidoracaproni.ui.listarprodutos.ListarProdutosFragment;
 
 public class CadastrarProdutosFragment extends Fragment implements  View.OnClickListener{
 
@@ -272,28 +272,28 @@ public class CadastrarProdutosFragment extends Fragment implements  View.OnClick
 
         if(verificaNull()) {
 
-            if (conexao.isOnline(getContext())){
+            if (conexao.isOnline(getContext())) {
 
-                if (Produtos.sel_prod == 1){
+                if (Produtos.sel_prod == 1) {
                     Toast.makeText(getContext(), produtos.getNome().toString() + " editado com sucesso !", Toast.LENGTH_SHORT).show();
                     Produtos.sel_prod = -1;
-                    produtosReference.child(Produtos.nomeProdudutoSel+" "+Produtos.tamanhoProdudutoSel).removeValue();
-                }else {
+                    produtosReference.child(Produtos.nomeProdudutoSel + " " + Produtos.tamanhoProdudutoSel).removeValue();
+                } else {
                     Toast.makeText(getContext(), produtos.getNome().toString() + " cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
                 }
+                produtosReference.child(textNome.getText().toString() + " " + textTamanho.getText().toString()).setValue(produtos);
 
-                    produtosReference.child(textNome.getText().toString()+" "+textTamanho.getText().toString()).setValue(produtos);
-                }
-                fragment = new HomeFragment();
+                fragment = new ListarProdutosFragment();
                 Activity main = getActivity();
-                String Tag = "HomeFragment";
+                String Tag = "ListarProdutosFragment";
 
                 if (main != null) {
                     ((MainActivity) getActivity()).displaySelectedFragment(fragment, Tag);
                 }
-            }else{
+            } else {
                 Toast.makeText(getContext(), "Verifique a Conexão com a internet!!!", Toast.LENGTH_SHORT).show();
             }
+        }
 
 
     }

@@ -113,6 +113,8 @@ public class ListarProdutosFragment extends Fragment implements Serializable, Pr
     public void listStart(){
         adapter = new ProdutosAdapter(context ,arrayProdutosAux,this);
         listaDeProdutos.setAdapter(adapter);
+        //adapter = new ArrayAdapter<Produtos>(context, android.R.layout.simple_list_item_1, arrayProdutos);
+        //listaDeProdutos.setAdapter(adapter);
     }
 
     public void reload(){

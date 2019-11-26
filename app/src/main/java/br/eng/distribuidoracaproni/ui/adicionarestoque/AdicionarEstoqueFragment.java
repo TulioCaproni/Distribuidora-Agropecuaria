@@ -29,7 +29,7 @@ import br.eng.distribuidoracaproni.MainActivity;
 import br.eng.distribuidoracaproni.R;
 import br.eng.distribuidoracaproni.objetos.Estoque;
 import br.eng.distribuidoracaproni.objetos.Produtos;
-import br.eng.distribuidoracaproni.ui.home.HomeFragment;
+import br.eng.distribuidoracaproni.ui.listarestoque.ListarEstoqueFragment;
 
 public class AdicionarEstoqueFragment extends Fragment implements Serializable, AdicionarEstoqueListener {
     static int quanti;
@@ -201,13 +201,13 @@ public class AdicionarEstoqueFragment extends Fragment implements Serializable, 
                }
            });
 
-        fragment = new HomeFragment();
-        Activity main = getActivity();
-        String Tag = "HomeFragment";
+            fragment = new ListarEstoqueFragment();
+            Activity main = getActivity();
+            String Tag = "ListarEstoqueFragment";
 
-        if (main != null) {
-            ((MainActivity) getActivity()).displaySelectedFragment(fragment, Tag);
-        }
-       }
+            if (main != null) {
+                ((MainActivity) getActivity()).displaySelectedFragment(fragment, Tag);
+            }
+           }
 
 }

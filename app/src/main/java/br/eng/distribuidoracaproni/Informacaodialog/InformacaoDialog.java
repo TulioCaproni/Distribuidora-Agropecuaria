@@ -50,11 +50,11 @@ public class InformacaoDialog extends Dialog {
 
                 try {
                     quantidade = Integer.parseInt( editTextNome.getText().toString() );
+                    listener.onSessionClickedAlert(quantidade);
                 }catch (Exception e){
                     Toast.makeText(getContext(), "Entre com um número valido!!!", Toast.LENGTH_SHORT).show();
                 }
                 dismiss();
-                listener.onSessionClickedAlert(quantidade);
             }
         });
     }
